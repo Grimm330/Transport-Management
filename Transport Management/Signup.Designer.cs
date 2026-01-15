@@ -51,7 +51,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(91, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(486, 40);
+            this.label3.Size = new System.Drawing.Size(471, 39);
             this.label3.TabIndex = 8;
             this.label3.Text = "Transport Management System ";
             // 
@@ -159,6 +159,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(272, 27);
             this.textBox4.TabIndex = 21;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
             // 
