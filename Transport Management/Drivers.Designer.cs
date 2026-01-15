@@ -62,10 +62,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -138,7 +139,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(615, 258);
+            this.button4.Location = new System.Drawing.Point(533, 258);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 35);
             this.button4.TabIndex = 30;
@@ -149,11 +150,11 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Goldenrod;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(454, 258);
+            this.button3.Location = new System.Drawing.Point(366, 258);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 35);
             this.button3.TabIndex = 29;
-            this.button3.Text = "Edit";
+            this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // label4
@@ -200,7 +201,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(276, 258);
+            this.button2.Location = new System.Drawing.Point(213, 258);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 35);
             this.button2.TabIndex = 28;
@@ -404,6 +405,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label15);
@@ -433,14 +435,6 @@
             this.panel1.Size = new System.Drawing.Size(1030, 643);
             this.panel1.TabIndex = 11;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(766, 198);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
-            this.dateTimePicker1.TabIndex = 36;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -450,6 +444,14 @@
             this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 37;
             this.label10.Text = "Join Date";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(766, 198);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
+            this.dateTimePicker1.TabIndex = 36;
             // 
             // label11
             // 
@@ -471,6 +473,17 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 23;
             this.pictureBox6.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkCyan;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(713, 258);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 35);
+            this.button5.TabIndex = 42;
+            this.button5.Text = "Search";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Drivers
             // 
@@ -547,5 +560,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button button5;
     }
 }

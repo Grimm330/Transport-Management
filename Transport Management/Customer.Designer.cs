@@ -58,6 +58,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -234,7 +235,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(635, 187);
+            this.button4.Location = new System.Drawing.Point(484, 187);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 35);
             this.button4.TabIndex = 30;
@@ -245,18 +246,18 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Goldenrod;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(454, 187);
+            this.button3.Location = new System.Drawing.Point(341, 187);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 35);
             this.button3.TabIndex = 29;
-            this.button3.Text = "Edit";
+            this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(276, 187);
+            this.button2.Location = new System.Drawing.Point(206, 187);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 35);
             this.button2.TabIndex = 28;
@@ -276,6 +277,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label15);
@@ -378,6 +380,17 @@
             this.label8.TabIndex = 37;
             this.label8.Text = "Gender";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkCyan;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(635, 187);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 35);
+            this.button5.TabIndex = 42;
+            this.button5.Text = "Search";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,5 +458,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button5;
     }
 }
