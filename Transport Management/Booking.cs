@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Transport_Management
 {
-    public partial class Signup : Form
+    public partial class Booking : Form
     {
-        public Signup()
+        public Booking()
         {
             InitializeComponent();
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }
