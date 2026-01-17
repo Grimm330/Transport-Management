@@ -42,32 +42,32 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CusEmailTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.BVNameTB = new System.Windows.Forms.ComboBox();
+            this.BDNameTB = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.BamountTb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Pdate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.Rdate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,39 +201,39 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.Rdate);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.Pdate);
+            this.panel1.Controls.Add(this.BDNameTB);
+            this.panel1.Controls.Add(this.BVNameTB);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.BGV);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.BamountTb);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.CusEmailTB);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(118, 7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1030, 643);
             this.panel1.TabIndex = 39;
             // 
-            // dataGridView1
+            // BGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 270);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 361);
-            this.dataGridView1.TabIndex = 31;
+            this.BGV.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.BGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BGV.Location = new System.Drawing.Point(24, 270);
+            this.BGV.Name = "BGV";
+            this.BGV.RowHeadersWidth = 51;
+            this.BGV.RowTemplate.Height = 24;
+            this.BGV.Size = new System.Drawing.Size(988, 361);
+            this.BGV.TabIndex = 31;
             // 
             // button4
             // 
@@ -299,13 +299,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Manage Booking";
             // 
-            // textBox1
+            // CusEmailTB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(34, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 28);
-            this.textBox1.TabIndex = 0;
+            this.CusEmailTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CusEmailTB.Location = new System.Drawing.Point(34, 128);
+            this.CusEmailTB.Name = "CusEmailTB";
+            this.CusEmailTB.Size = new System.Drawing.Size(167, 28);
+            this.CusEmailTB.TabIndex = 0;
             // 
             // label3
             // 
@@ -340,29 +340,29 @@
             this.pictureBox5.TabIndex = 45;
             this.pictureBox5.TabStop = false;
             // 
-            // comboBox2
+            // BVNameTB
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.BVNameTB.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVNameTB.FormattingEnabled = true;
+            this.BVNameTB.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox2.Location = new System.Drawing.Point(230, 128);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(134, 28);
-            this.comboBox2.TabIndex = 43;
+            this.BVNameTB.Location = new System.Drawing.Point(230, 128);
+            this.BVNameTB.Name = "BVNameTB";
+            this.BVNameTB.Size = new System.Drawing.Size(134, 28);
+            this.BVNameTB.TabIndex = 43;
             // 
-            // comboBox3
+            // BDNameTB
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.BDNameTB.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BDNameTB.FormattingEnabled = true;
+            this.BDNameTB.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox3.Location = new System.Drawing.Point(399, 128);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(134, 28);
-            this.comboBox3.TabIndex = 44;
+            this.BDNameTB.Location = new System.Drawing.Point(399, 128);
+            this.BDNameTB.Name = "BDNameTB";
+            this.BDNameTB.Size = new System.Drawing.Size(134, 28);
+            this.BDNameTB.TabIndex = 44;
             // 
             // label9
             // 
@@ -374,13 +374,13 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Amount";
             // 
-            // textBox4
+            // BamountTb
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(571, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 28);
-            this.textBox4.TabIndex = 17;
+            this.BamountTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BamountTb.Location = new System.Drawing.Point(571, 128);
+            this.BamountTb.Name = "BamountTb";
+            this.BamountTb.Size = new System.Drawing.Size(154, 28);
+            this.BamountTb.TabIndex = 17;
             // 
             // label10
             // 
@@ -392,13 +392,13 @@
             this.label10.TabIndex = 46;
             this.label10.Text = "Pickup Date";
             // 
-            // dateTimePicker1
+            // Pdate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(767, 93);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
-            this.dateTimePicker1.TabIndex = 45;
+            this.Pdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pdate.Location = new System.Drawing.Point(767, 93);
+            this.Pdate.Name = "Pdate";
+            this.Pdate.Size = new System.Drawing.Size(210, 27);
+            this.Pdate.TabIndex = 45;
             // 
             // label8
             // 
@@ -410,13 +410,13 @@
             this.label8.TabIndex = 48;
             this.label8.Text = "Return Date";
             // 
-            // dateTimePicker2
+            // Rdate
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(767, 166);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(210, 27);
-            this.dateTimePicker2.TabIndex = 47;
+            this.Rdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rdate.Location = new System.Drawing.Point(767, 166);
+            this.Rdate.Name = "Rdate";
+            this.Rdate.Size = new System.Drawing.Size(210, 27);
+            this.Rdate.TabIndex = 47;
             // 
             // Booking
             // 
@@ -447,7 +447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -469,24 +469,24 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView BGV;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CusEmailTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox BDNameTB;
+        private System.Windows.Forms.ComboBox BVNameTB;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox BamountTb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker Rdate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Pdate;
     }
 }

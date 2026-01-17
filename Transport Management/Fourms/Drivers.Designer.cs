@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Drivers));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Dphone = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DEarned = new System.Windows.Forms.TextBox();
+            this.DGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,32 +43,32 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Dname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.DRate = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.DStatus = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.DAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.DLicN = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DEmail = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DJdate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -98,13 +98,13 @@
             this.label15.TabIndex = 35;
             this.label15.Text = "Phone";
             // 
-            // textBox2
+            // Dphone
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(454, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 28);
-            this.textBox2.TabIndex = 34;
+            this.Dphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dphone.Location = new System.Drawing.Point(454, 126);
+            this.Dphone.Name = "Dphone";
+            this.Dphone.Size = new System.Drawing.Size(169, 28);
+            this.Dphone.TabIndex = 34;
             // 
             // label16
             // 
@@ -116,24 +116,24 @@
             this.label16.TabIndex = 33;
             this.label16.Text = "Earned";
             // 
-            // textBox6
+            // DEarned
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(527, 198);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(220, 28);
-            this.textBox6.TabIndex = 32;
+            this.DEarned.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DEarned.Location = new System.Drawing.Point(527, 198);
+            this.DEarned.Name = "DEarned";
+            this.DEarned.Size = new System.Drawing.Size(220, 28);
+            this.DEarned.TabIndex = 32;
             // 
-            // dataGridView1
+            // DGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 326);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 305);
-            this.dataGridView1.TabIndex = 31;
+            this.DGV.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Location = new System.Drawing.Point(24, 326);
+            this.DGV.Name = "DGV";
+            this.DGV.RowHeadersWidth = 51;
+            this.DGV.RowTemplate.Height = 24;
+            this.DGV.Size = new System.Drawing.Size(988, 305);
+            this.DGV.TabIndex = 31;
             // 
             // button4
             // 
@@ -219,13 +219,13 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Full Name";
             // 
-            // textBox5
+            // Dname
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(262, 126);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(169, 28);
-            this.textBox5.TabIndex = 26;
+            this.Dname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dname.Location = new System.Drawing.Point(262, 126);
+            this.Dname.Name = "Dname";
+            this.Dname.Size = new System.Drawing.Size(169, 28);
+            this.Dname.TabIndex = 26;
             // 
             // label1
             // 
@@ -259,18 +259,18 @@
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
-            // comboBox4
+            // DRate
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.DRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DRate.FormattingEnabled = true;
+            this.DRate.Items.AddRange(new object[] {
             "5- Star",
             "4-Star",
             "3-Star"});
-            this.comboBox4.Location = new System.Drawing.Point(653, 126);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(150, 28);
-            this.comboBox4.TabIndex = 24;
+            this.DRate.Location = new System.Drawing.Point(653, 126);
+            this.DRate.Name = "DRate";
+            this.DRate.Size = new System.Drawing.Size(150, 28);
+            this.DRate.TabIndex = 24;
             // 
             // label12
             // 
@@ -282,19 +282,19 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "Status";
             // 
-            // comboBox3
+            // DStatus
             // 
-            this.comboBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.DStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DStatus.FormattingEnabled = true;
+            this.DStatus.Items.AddRange(new object[] {
             "Available",
             "In-Trip",
             "In-Leave"});
-            this.comboBox3.Location = new System.Drawing.Point(826, 128);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(150, 28);
-            this.comboBox3.TabIndex = 22;
+            this.DStatus.Location = new System.Drawing.Point(826, 128);
+            this.DStatus.Name = "DStatus";
+            this.DStatus.Size = new System.Drawing.Size(150, 28);
+            this.DStatus.TabIndex = 22;
             // 
             // pictureBox4
             // 
@@ -327,13 +327,13 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Address";
             // 
-            // textBox4
+            // DAddress
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(294, 198);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 28);
-            this.textBox4.TabIndex = 17;
+            this.DAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DAddress.Location = new System.Drawing.Point(294, 198);
+            this.DAddress.Name = "DAddress";
+            this.DAddress.Size = new System.Drawing.Size(215, 28);
+            this.DAddress.TabIndex = 17;
             // 
             // label8
             // 
@@ -355,13 +355,13 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "E-Mail";
             // 
-            // textBox3
+            // DLicN
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(74, 200);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 28);
-            this.textBox3.TabIndex = 12;
+            this.DLicN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DLicN.Location = new System.Drawing.Point(74, 200);
+            this.DLicN.Name = "DLicN";
+            this.DLicN.Size = new System.Drawing.Size(203, 28);
+            this.DLicN.TabIndex = 12;
             // 
             // label6
             // 
@@ -374,13 +374,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Manage Drivers";
             // 
-            // textBox1
+            // DEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(74, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 28);
-            this.textBox1.TabIndex = 0;
+            this.DEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DEmail.Location = new System.Drawing.Point(74, 126);
+            this.DEmail.Name = "DEmail";
+            this.DEmail.Size = new System.Drawing.Size(167, 28);
+            this.DEmail.TabIndex = 0;
             // 
             // button1
             // 
@@ -407,28 +407,28 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.DJdate);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.Dphone);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.DEarned);
+            this.panel1.Controls.Add(this.DGV);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.Dname);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.comboBox4);
+            this.panel1.Controls.Add(this.DRate);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.DStatus);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.DAddress);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.DLicN);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.DEmail);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(121, 1);
             this.panel1.Name = "panel1";
@@ -456,13 +456,13 @@
             this.label10.TabIndex = 37;
             this.label10.Text = "Join Date";
             // 
-            // dateTimePicker1
+            // DJdate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(766, 198);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
-            this.dateTimePicker1.TabIndex = 36;
+            this.DJdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DJdate.Location = new System.Drawing.Point(766, 198);
+            this.DJdate.Name = "DJdate";
+            this.DJdate.Size = new System.Drawing.Size(210, 27);
+            this.DJdate.TabIndex = 36;
             // 
             // label11
             // 
@@ -509,7 +509,7 @@
             this.Text = "Drivers";
             this.Load += new System.EventHandler(this.Drivers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -526,10 +526,10 @@
 
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Dphone;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox DEarned;
+        private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
@@ -538,27 +538,27 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Dname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox DRate;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox DStatus;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox DAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox DLicN;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DEmail;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DJdate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button5;
