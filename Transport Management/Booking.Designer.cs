@@ -437,6 +437,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Booking";
             this.Text = "Booking";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
