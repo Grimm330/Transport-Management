@@ -77,6 +77,12 @@
     <Compile Include="Fourms\LoginFourm.Designer.cs">
       <DependentUpon>LoginFourm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fourms\UserBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fourms\UserBook.Designer.cs">
+      <DependentUpon>UserBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fourms\Signup.cs">
@@ -90,6 +96,11 @@
     </Compile>
     <Compile Include="Fourms\Vehicles.Designer.cs">
       <DependentUpon>Vehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransportDBDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Fourms\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
@@ -105,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fourms\LoginFourm.resx">
       <DependentUpon>LoginFourm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fourms\UserBook.resx">
+      <DependentUpon>UserBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +144,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TransportDBDataSet.xsc">
+      <DependentUpon>TransportDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TransportDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransportDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TransportDBDataSet.xss">
+      <DependentUpon>TransportDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
