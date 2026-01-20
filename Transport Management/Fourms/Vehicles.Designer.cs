@@ -61,6 +61,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -77,9 +79,9 @@
             this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label11.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label11.Location = new System.Drawing.Point(23, 350);
+            this.label11.Location = new System.Drawing.Point(26, 438);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 20);
+            this.label11.Size = new System.Drawing.Size(82, 25);
             this.label11.TabIndex = 36;
             this.label11.Text = "Vehicles";
             // 
@@ -87,9 +89,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(762, 103);
+            this.label12.Location = new System.Drawing.Point(857, 129);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 20);
+            this.label12.Size = new System.Drawing.Size(132, 23);
             this.label12.TabIndex = 23;
             this.label12.Text = "Engine Type";
             // 
@@ -102,18 +104,19 @@
             "Available",
             "In-Trip",
             "In-Leave"});
-            this.VEtype.Location = new System.Drawing.Point(766, 126);
+            this.VEtype.Location = new System.Drawing.Point(862, 158);
+            this.VEtype.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VEtype.Name = "VEtype";
-            this.VEtype.Size = new System.Drawing.Size(150, 28);
+            this.VEtype.Size = new System.Drawing.Size(168, 33);
             this.VEtype.TabIndex = 22;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(70, 177);
+            this.label8.Location = new System.Drawing.Point(79, 221);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 20);
+            this.label8.Size = new System.Drawing.Size(137, 23);
             this.label8.TabIndex = 16;
             this.label8.Text = "Licence Plate";
             // 
@@ -121,9 +124,10 @@
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(20, 288);
+            this.pictureBox6.Location = new System.Drawing.Point(22, 360);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(72, 59);
+            this.pictureBox6.Size = new System.Drawing.Size(81, 73);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 37;
             this.pictureBox6.TabStop = false;
@@ -133,27 +137,28 @@
             this.label6.AutoSize = true;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Rockwell Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(385, 16);
+            this.label6.Location = new System.Drawing.Point(433, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(243, 41);
+            this.label6.Size = new System.Drawing.Size(296, 49);
             this.label6.TabIndex = 10;
             this.label6.Text = "Manage Vehicles";
             // 
             // VName
             // 
             this.VName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VName.Location = new System.Drawing.Point(74, 124);
+            this.VName.Location = new System.Drawing.Point(83, 155);
+            this.VName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VName.Name = "VName";
-            this.VName.Size = new System.Drawing.Size(203, 28);
+            this.VName.Size = new System.Drawing.Size(228, 32);
             this.VName.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 447);
+            this.label3.Location = new System.Drawing.Point(26, 559);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 32;
             this.label3.Text = "Booking";
             // 
@@ -161,18 +166,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 255);
+            this.label2.Location = new System.Drawing.Point(25, 319);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(89, 25);
             this.label2.TabIndex = 26;
             this.label2.Text = "Customer";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(21, 481);
+            this.pictureBox5.Location = new System.Drawing.Point(24, 601);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(71, 64);
+            this.pictureBox5.Size = new System.Drawing.Size(80, 80);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 31;
             this.pictureBox5.TabStop = false;
@@ -181,9 +187,10 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(21, 100);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 125);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(72, 61);
+            this.pictureBox2.Size = new System.Drawing.Size(81, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
@@ -193,27 +200,28 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(31, 164);
+            this.label1.Location = new System.Drawing.Point(35, 205);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 34;
             this.label1.Text = "Drivers";
             // 
             // VLp
             // 
             this.VLp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VLp.Location = new System.Drawing.Point(74, 200);
+            this.VLp.Location = new System.Drawing.Point(83, 250);
+            this.VLp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VLp.Name = "VLp";
-            this.VLp.Size = new System.Drawing.Size(203, 28);
+            this.VLp.Size = new System.Drawing.Size(228, 32);
             this.VLp.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 548);
+            this.label4.Location = new System.Drawing.Point(24, 685);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.Size = new System.Drawing.Size(90, 25);
             this.label4.TabIndex = 33;
             this.label4.Text = "Dashbord";
             // 
@@ -221,9 +229,10 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(20, 194);
+            this.pictureBox3.Location = new System.Drawing.Point(22, 242);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(73, 58);
+            this.pictureBox3.Size = new System.Drawing.Size(82, 72);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 28;
             this.pictureBox3.TabStop = false;
@@ -232,20 +241,22 @@
             // 
             this.VeGV.BackgroundColor = System.Drawing.SystemColors.Info;
             this.VeGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.VeGV.Location = new System.Drawing.Point(24, 326);
+            this.VeGV.Location = new System.Drawing.Point(27, 408);
+            this.VeGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VeGV.Name = "VeGV";
             this.VeGV.RowHeadersWidth = 51;
             this.VeGV.RowTemplate.Height = 24;
-            this.VeGV.Size = new System.Drawing.Size(988, 305);
+            this.VeGV.Size = new System.Drawing.Size(1112, 381);
             this.VeGV.TabIndex = 31;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(501, 258);
+            this.button4.Location = new System.Drawing.Point(564, 322);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 35);
+            this.button4.Size = new System.Drawing.Size(101, 44);
             this.button4.TabIndex = 30;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = false;
@@ -254,9 +265,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Goldenrod;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(354, 258);
+            this.button3.Location = new System.Drawing.Point(398, 322);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 35);
+            this.button3.Size = new System.Drawing.Size(101, 44);
             this.button3.TabIndex = 29;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
@@ -265,9 +277,10 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(216, 258);
+            this.button2.Location = new System.Drawing.Point(243, 322);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 35);
+            this.button2.Size = new System.Drawing.Size(101, 44);
             this.button2.TabIndex = 28;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = false;
@@ -276,15 +289,17 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(290, 103);
+            this.label14.Location = new System.Drawing.Point(326, 129);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 20);
+            this.label14.Size = new System.Drawing.Size(88, 23);
             this.label14.TabIndex = 27;
             this.label14.Text = "Mileage";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.VStatus);
@@ -304,18 +319,20 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.VName);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(118, 7);
+            this.panel1.Location = new System.Drawing.Point(133, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1030, 643);
+            this.panel1.Size = new System.Drawing.Size(1159, 804);
             this.panel1.TabIndex = 25;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.DarkCyan;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(646, 258);
+            this.button5.Location = new System.Drawing.Point(727, 322);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 35);
+            this.button5.Size = new System.Drawing.Size(101, 44);
             this.button5.TabIndex = 41;
             this.button5.Text = "Search";
             this.button5.UseVisualStyleBackColor = false;
@@ -324,9 +341,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(290, 177);
+            this.label9.Location = new System.Drawing.Point(326, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 20);
+            this.label9.Size = new System.Drawing.Size(66, 23);
             this.label9.TabIndex = 40;
             this.label9.Text = "Status";
             // 
@@ -339,34 +356,37 @@
             "Available",
             "Booked",
             "In-Service"});
-            this.VStatus.Location = new System.Drawing.Point(294, 200);
+            this.VStatus.Location = new System.Drawing.Point(331, 250);
+            this.VStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VStatus.Name = "VStatus";
-            this.VStatus.Size = new System.Drawing.Size(150, 28);
+            this.VStatus.Size = new System.Drawing.Size(168, 33);
             this.VStatus.TabIndex = 39;
             // 
             // VYear
             // 
             this.VYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VYear.Location = new System.Drawing.Point(527, 126);
+            this.VYear.Location = new System.Drawing.Point(593, 158);
+            this.VYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VYear.Name = "VYear";
-            this.VYear.Size = new System.Drawing.Size(220, 28);
+            this.VYear.Size = new System.Drawing.Size(247, 32);
             this.VYear.TabIndex = 38;
             // 
             // Vmile
             // 
             this.Vmile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vmile.Location = new System.Drawing.Point(294, 126);
+            this.Vmile.Location = new System.Drawing.Point(331, 158);
+            this.Vmile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Vmile.Name = "Vmile";
-            this.Vmile.Size = new System.Drawing.Size(215, 28);
+            this.Vmile.Size = new System.Drawing.Size(241, 32);
             this.Vmile.TabIndex = 26;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(523, 101);
+            this.label13.Location = new System.Drawing.Point(588, 126);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 20);
+            this.label13.Size = new System.Drawing.Size(56, 23);
             this.label13.TabIndex = 25;
             this.label13.Text = "Year";
             // 
@@ -374,18 +394,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(70, 103);
+            this.label7.Location = new System.Drawing.Point(79, 129);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 20);
+            this.label7.Size = new System.Drawing.Size(128, 23);
             this.label7.TabIndex = 15;
             this.label7.Text = "Brand Name";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -394,9 +415,10 @@
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(20, 382);
+            this.pictureBox4.Location = new System.Drawing.Point(22, 478);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(72, 62);
+            this.pictureBox4.Size = new System.Drawing.Size(81, 77);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 30;
             this.pictureBox4.TabStop = false;
@@ -405,27 +427,47 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 67);
+            this.label5.Location = new System.Drawing.Point(35, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.Size = new System.Drawing.Size(67, 25);
             this.label5.TabIndex = 35;
             this.label5.Text = "Admin";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(9, 585);
+            this.button1.Location = new System.Drawing.Point(10, 731);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 53);
+            this.button1.Size = new System.Drawing.Size(104, 66);
             this.button1.TabIndex = 24;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(537, 223);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 23);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Amount";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(541, 249);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(228, 32);
+            this.textBox1.TabIndex = 42;
+            // 
             // Vehicles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 656);
+            this.ClientSize = new System.Drawing.Size(1302, 820);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label3);
@@ -441,6 +483,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Vehicles";
             this.Text = "Vehicles";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -491,5 +534,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox VStatus;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
