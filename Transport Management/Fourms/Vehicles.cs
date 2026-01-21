@@ -48,5 +48,12 @@ namespace Transport_Management
                 }
             }
         }
+
+        private void Vehicles_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'transportDBDataSet.BookingTB' table. You can move, or remove it, as needed.
+            this.bookingTBTableAdapter.Fill(this.transportDBDataSet.BookingTB);
+
+        }
     }
 }

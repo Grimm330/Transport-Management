@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vehicles));
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,6 +64,17 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.transportDBDataSet = new Transport_Management.TransportDBDataSet();
+            this.bookingTBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingTBTableAdapter = new Transport_Management.TransportDBDataSetTableAdapters.BookingTBTableAdapter();
+            this.bIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cusEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vLpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -71,6 +83,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingTBBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -91,9 +105,9 @@
             this.label12.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(857, 129);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 23);
+            this.label12.Size = new System.Drawing.Size(138, 23);
             this.label12.TabIndex = 23;
-            this.label12.Text = "Engine Type";
+            this.label12.Text = "Vehicle Type";
             // 
             // VEtype
             // 
@@ -101,13 +115,14 @@
             this.VEtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VEtype.FormattingEnabled = true;
             this.VEtype.Items.AddRange(new object[] {
-            "Available",
-            "In-Trip",
-            "In-Leave"});
-            this.VEtype.Location = new System.Drawing.Point(862, 158);
+            "SUV",
+            "Sedan",
+            "MPV",
+            "Coupe"});
+            this.VEtype.Location = new System.Drawing.Point(861, 159);
             this.VEtype.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VEtype.Name = "VEtype";
-            this.VEtype.Size = new System.Drawing.Size(168, 33);
+            this.VEtype.Size = new System.Drawing.Size(197, 33);
             this.VEtype.TabIndex = 22;
             // 
             // label8
@@ -239,14 +254,25 @@
             // 
             // VeGV
             // 
+            this.VeGV.AutoGenerateColumns = false;
             this.VeGV.BackgroundColor = System.Drawing.SystemColors.Info;
             this.VeGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.VeGV.Location = new System.Drawing.Point(27, 408);
+            this.VeGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bIDDataGridViewTextBoxColumn,
+            this.cusEmailDataGridViewTextBoxColumn,
+            this.vNameDataGridViewTextBoxColumn,
+            this.dNameDataGridViewTextBoxColumn,
+            this.bAtDataGridViewTextBoxColumn,
+            this.pDateDataGridViewTextBoxColumn,
+            this.rDateDataGridViewTextBoxColumn,
+            this.vLpDataGridViewTextBoxColumn});
+            this.VeGV.DataSource = this.bookingTBBindingSource;
+            this.VeGV.Location = new System.Drawing.Point(3, 419);
             this.VeGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VeGV.Name = "VeGV";
             this.VeGV.RowHeadersWidth = 51;
             this.VeGV.RowTemplate.Height = 24;
-            this.VeGV.Size = new System.Drawing.Size(1112, 381);
+            this.VeGV.Size = new System.Drawing.Size(1156, 381);
             this.VeGV.TabIndex = 31;
             // 
             // button4
@@ -464,11 +490,90 @@
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // transportDBDataSet
+            // 
+            this.transportDBDataSet.DataSetName = "TransportDBDataSet";
+            this.transportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bookingTBBindingSource
+            // 
+            this.bookingTBBindingSource.DataMember = "BookingTB";
+            this.bookingTBBindingSource.DataSource = this.transportDBDataSet;
+            // 
+            // bookingTBTableAdapter
+            // 
+            this.bookingTBTableAdapter.ClearBeforeFill = true;
+            // 
+            // bIDDataGridViewTextBoxColumn
+            // 
+            this.bIDDataGridViewTextBoxColumn.DataPropertyName = "BID";
+            this.bIDDataGridViewTextBoxColumn.HeaderText = "BID";
+            this.bIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.bIDDataGridViewTextBoxColumn.Name = "bIDDataGridViewTextBoxColumn";
+            this.bIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cusEmailDataGridViewTextBoxColumn
+            // 
+            this.cusEmailDataGridViewTextBoxColumn.DataPropertyName = "CusEmail";
+            this.cusEmailDataGridViewTextBoxColumn.HeaderText = "CusEmail";
+            this.cusEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cusEmailDataGridViewTextBoxColumn.Name = "cusEmailDataGridViewTextBoxColumn";
+            this.cusEmailDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // vNameDataGridViewTextBoxColumn
+            // 
+            this.vNameDataGridViewTextBoxColumn.DataPropertyName = "VName";
+            this.vNameDataGridViewTextBoxColumn.HeaderText = "VName";
+            this.vNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.vNameDataGridViewTextBoxColumn.Name = "vNameDataGridViewTextBoxColumn";
+            this.vNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dNameDataGridViewTextBoxColumn
+            // 
+            this.dNameDataGridViewTextBoxColumn.DataPropertyName = "DName";
+            this.dNameDataGridViewTextBoxColumn.HeaderText = "DName";
+            this.dNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dNameDataGridViewTextBoxColumn.Name = "dNameDataGridViewTextBoxColumn";
+            this.dNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // bAtDataGridViewTextBoxColumn
+            // 
+            this.bAtDataGridViewTextBoxColumn.DataPropertyName = "BAt";
+            this.bAtDataGridViewTextBoxColumn.HeaderText = "BAt";
+            this.bAtDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.bAtDataGridViewTextBoxColumn.Name = "bAtDataGridViewTextBoxColumn";
+            this.bAtDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // pDateDataGridViewTextBoxColumn
+            // 
+            this.pDateDataGridViewTextBoxColumn.DataPropertyName = "PDate";
+            this.pDateDataGridViewTextBoxColumn.HeaderText = "PDate";
+            this.pDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.pDateDataGridViewTextBoxColumn.Name = "pDateDataGridViewTextBoxColumn";
+            this.pDateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // rDateDataGridViewTextBoxColumn
+            // 
+            this.rDateDataGridViewTextBoxColumn.DataPropertyName = "RDate";
+            this.rDateDataGridViewTextBoxColumn.HeaderText = "RDate";
+            this.rDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.rDateDataGridViewTextBoxColumn.Name = "rDateDataGridViewTextBoxColumn";
+            this.rDateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // vLpDataGridViewTextBoxColumn
+            // 
+            this.vLpDataGridViewTextBoxColumn.DataPropertyName = "VLp";
+            this.vLpDataGridViewTextBoxColumn.HeaderText = "VLp";
+            this.vLpDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.vLpDataGridViewTextBoxColumn.Name = "vLpDataGridViewTextBoxColumn";
+            this.vLpDataGridViewTextBoxColumn.Width = 150;
+            // 
             // Vehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 820);
+            this.ClientSize = new System.Drawing.Size(1302, 831);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label3);
@@ -487,6 +592,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Vehicles";
             this.Text = "Vehicles";
+            this.Load += new System.EventHandler(this.Vehicles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -496,6 +602,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingTBBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,5 +645,16 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Amount;
+        private TransportDBDataSet transportDBDataSet;
+        private System.Windows.Forms.BindingSource bookingTBBindingSource;
+        private TransportDBDataSetTableAdapters.BookingTBTableAdapter bookingTBTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cusEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bAtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vLpDataGridViewTextBoxColumn;
     }
 }

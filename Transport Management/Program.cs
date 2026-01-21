@@ -16,7 +16,7 @@ namespace Transport_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginFourm());
+            Application.Run(new Vehicles());
         }
     }
 }
