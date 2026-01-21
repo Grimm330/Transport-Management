@@ -50,6 +50,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Amount = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.VStatus = new System.Windows.Forms.ComboBox();
@@ -61,8 +63,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -284,6 +284,7 @@
             this.button2.TabIndex = 28;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label14
             // 
@@ -299,7 +300,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.Amount);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.VStatus);
@@ -324,6 +325,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1159, 804);
             this.panel1.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(537, 223);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 23);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Amount";
+            // 
+            // Amount
+            // 
+            this.Amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Amount.Location = new System.Drawing.Point(541, 249);
+            this.Amount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Amount.Name = "Amount";
+            this.Amount.Size = new System.Drawing.Size(228, 32);
+            this.Amount.TabIndex = 42;
             // 
             // button5
             // 
@@ -444,25 +464,6 @@
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(537, 223);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 23);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Amount";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(541, 249);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 32);
-            this.textBox1.TabIndex = 42;
-            // 
             // Vehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -535,6 +536,6 @@
         private System.Windows.Forms.ComboBox VStatus;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Amount;
     }
 }
