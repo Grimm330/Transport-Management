@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Booking));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -46,21 +47,22 @@
             this.Rdate = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.Pdate = new System.Windows.Forms.DateTimePicker();
-            this.BDNameTB = new System.Windows.Forms.ComboBox();
-            this.BVNameTB = new System.Windows.Forms.ComboBox();
+            this.VeDriver = new System.Windows.Forms.ComboBox();
+            this.VeBook = new System.Windows.Forms.ComboBox();
             this.BGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.BamountTb = new System.Windows.Forms.TextBox();
+            this.BAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.CusEmailTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.CusBook = new System.Windows.Forms.ComboBox();
+            this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,15 +71,15 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(53, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
@@ -86,10 +88,9 @@
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(22, 478);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(20, 382);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(81, 77);
+            this.pictureBox4.Size = new System.Drawing.Size(72, 62);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 44;
             this.pictureBox4.TabStop = false;
@@ -97,10 +98,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(10, 731);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(9, 585);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 66);
+            this.button1.Size = new System.Drawing.Size(92, 53);
             this.button1.TabIndex = 38;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
@@ -109,10 +109,9 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DarkCyan;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(714, 262);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Location = new System.Drawing.Point(635, 210);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 44);
+            this.button5.Size = new System.Drawing.Size(90, 35);
             this.button5.TabIndex = 42;
             this.button5.Text = "Search";
             this.button5.UseVisualStyleBackColor = false;
@@ -122,9 +121,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 205);
+            this.label1.Location = new System.Drawing.Point(31, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 48;
             this.label1.Text = "Drivers";
             // 
@@ -132,9 +131,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 685);
+            this.label4.Location = new System.Drawing.Point(21, 548);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 25);
+            this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 47;
             this.label4.Text = "Dashbord";
             // 
@@ -142,10 +141,9 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(22, 242);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(20, 194);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(82, 72);
+            this.pictureBox3.Size = new System.Drawing.Size(73, 58);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 42;
             this.pictureBox3.TabStop = false;
@@ -154,9 +152,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 84);
+            this.label5.Location = new System.Drawing.Point(31, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
+            this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 49;
             this.label5.Text = "Admin";
             // 
@@ -164,9 +162,9 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(444, 131);
+            this.label15.Location = new System.Drawing.Point(395, 105);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 23);
+            this.label15.Size = new System.Drawing.Size(59, 20);
             this.label15.TabIndex = 35;
             this.label15.Text = "Driver";
             // 
@@ -174,9 +172,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(26, 438);
+            this.label11.Location = new System.Drawing.Point(23, 350);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 25);
+            this.label11.Size = new System.Drawing.Size(65, 20);
             this.label11.TabIndex = 50;
             this.label11.Text = "Vehicles";
             // 
@@ -184,10 +182,9 @@
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(22, 360);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(20, 288);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(81, 73);
+            this.pictureBox6.Size = new System.Drawing.Size(72, 59);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 51;
             this.pictureBox6.TabStop = false;
@@ -196,10 +193,9 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(24, 125);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(21, 100);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(81, 76);
+            this.pictureBox2.Size = new System.Drawing.Size(72, 61);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 43;
             this.pictureBox2.TabStop = false;
@@ -207,12 +203,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.CusBook);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.Rdate);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.Pdate);
-            this.panel1.Controls.Add(this.BDNameTB);
-            this.panel1.Controls.Add(this.BVNameTB);
+            this.panel1.Controls.Add(this.VeDriver);
+            this.panel1.Controls.Add(this.VeBook);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.BGV);
@@ -221,101 +218,92 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.BamountTb);
+            this.panel1.Controls.Add(this.BAmount);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.CusEmailTB);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(133, 9);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(118, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1159, 804);
+            this.panel1.Size = new System.Drawing.Size(1030, 643);
             this.panel1.TabIndex = 39;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(868, 179);
+            this.label8.Location = new System.Drawing.Point(772, 143);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 23);
+            this.label8.Size = new System.Drawing.Size(101, 20);
             this.label8.TabIndex = 48;
             this.label8.Text = "Return Date";
             // 
             // Rdate
             // 
             this.Rdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rdate.Location = new System.Drawing.Point(863, 208);
-            this.Rdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Rdate.Location = new System.Drawing.Point(767, 166);
             this.Rdate.Name = "Rdate";
-            this.Rdate.Size = new System.Drawing.Size(236, 31);
+            this.Rdate.Size = new System.Drawing.Size(210, 27);
             this.Rdate.TabIndex = 47;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(858, 88);
+            this.label10.Location = new System.Drawing.Point(763, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 23);
+            this.label10.Size = new System.Drawing.Size(103, 20);
             this.label10.TabIndex = 46;
             this.label10.Text = "Pickup Date";
             // 
             // Pdate
             // 
             this.Pdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pdate.Location = new System.Drawing.Point(863, 116);
-            this.Pdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Pdate.Location = new System.Drawing.Point(767, 93);
             this.Pdate.Name = "Pdate";
-            this.Pdate.Size = new System.Drawing.Size(236, 31);
+            this.Pdate.Size = new System.Drawing.Size(210, 27);
             this.Pdate.TabIndex = 45;
             // 
-            // BDNameTB
+            // VeDriver
             // 
-            this.BDNameTB.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BDNameTB.FormattingEnabled = true;
-            this.BDNameTB.Items.AddRange(new object[] {
+            this.VeDriver.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VeDriver.FormattingEnabled = true;
+            this.VeDriver.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.BDNameTB.Location = new System.Drawing.Point(449, 160);
-            this.BDNameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BDNameTB.Name = "BDNameTB";
-            this.BDNameTB.Size = new System.Drawing.Size(150, 30);
-            this.BDNameTB.TabIndex = 44;
+            this.VeDriver.Location = new System.Drawing.Point(399, 128);
+            this.VeDriver.Name = "VeDriver";
+            this.VeDriver.Size = new System.Drawing.Size(134, 28);
+            this.VeDriver.TabIndex = 44;
             // 
-            // BVNameTB
+            // VeBook
             // 
-            this.BVNameTB.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVNameTB.FormattingEnabled = true;
-            this.BVNameTB.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.BVNameTB.Location = new System.Drawing.Point(259, 160);
-            this.BVNameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BVNameTB.Name = "BVNameTB";
-            this.BVNameTB.Size = new System.Drawing.Size(150, 30);
-            this.BVNameTB.TabIndex = 43;
+            this.VeBook.DataSource = this.vehiclesBindingSource;
+            this.VeBook.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VeBook.FormattingEnabled = true;
+            this.VeBook.Location = new System.Drawing.Point(230, 128);
+            this.VeBook.Name = "VeBook";
+            this.VeBook.Size = new System.Drawing.Size(134, 28);
+            this.VeBook.TabIndex = 43;
+            this.VeBook.SelectedIndexChanged += new System.EventHandler(this.VeBook_SelectedIndexChanged);
             // 
             // BGV
             // 
             this.BGV.BackgroundColor = System.Drawing.SystemColors.Info;
             this.BGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BGV.Location = new System.Drawing.Point(27, 338);
-            this.BGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BGV.Location = new System.Drawing.Point(24, 270);
             this.BGV.Name = "BGV";
             this.BGV.RowHeadersWidth = 51;
             this.BGV.RowTemplate.Height = 24;
-            this.BGV.Size = new System.Drawing.Size(1112, 451);
+            this.BGV.Size = new System.Drawing.Size(988, 361);
             this.BGV.TabIndex = 31;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(544, 262);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Location = new System.Drawing.Point(484, 210);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 44);
+            this.button4.Size = new System.Drawing.Size(90, 35);
             this.button4.TabIndex = 30;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = false;
@@ -324,10 +312,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Goldenrod;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(384, 262);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(341, 210);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 44);
+            this.button3.Size = new System.Drawing.Size(90, 35);
             this.button3.TabIndex = 29;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
@@ -336,21 +323,21 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(232, 262);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(206, 210);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 44);
+            this.button2.Size = new System.Drawing.Size(90, 35);
             this.button2.TabIndex = 28;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(254, 129);
+            this.label14.Location = new System.Drawing.Point(226, 103);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 23);
+            this.label14.Size = new System.Drawing.Size(78, 20);
             this.label14.TabIndex = 27;
             this.label14.Text = "Vehicles";
             // 
@@ -358,59 +345,49 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(638, 131);
+            this.label9.Location = new System.Drawing.Point(567, 105);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 23);
+            this.label9.Size = new System.Drawing.Size(71, 20);
             this.label9.TabIndex = 18;
             this.label9.Text = "Amount";
             // 
-            // BamountTb
+            // BAmount
             // 
-            this.BamountTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BamountTb.Location = new System.Drawing.Point(642, 160);
-            this.BamountTb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BamountTb.Name = "BamountTb";
-            this.BamountTb.Size = new System.Drawing.Size(173, 32);
-            this.BamountTb.TabIndex = 17;
+            this.BAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAmount.Location = new System.Drawing.Point(571, 128);
+            this.BAmount.Name = "BAmount";
+            this.BAmount.Size = new System.Drawing.Size(154, 28);
+            this.BAmount.TabIndex = 17;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 131);
+            this.label7.Location = new System.Drawing.Point(30, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 23);
+            this.label7.Size = new System.Drawing.Size(91, 20);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Customer E-Mail";
+            this.label7.Text = "Customer ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Rockwell Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(433, 20);
+            this.label6.Location = new System.Drawing.Point(385, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(294, 49);
+            this.label6.Size = new System.Drawing.Size(243, 41);
             this.label6.TabIndex = 10;
             this.label6.Text = "Manage Booking";
-            // 
-            // CusEmailTB
-            // 
-            this.CusEmailTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CusEmailTB.Location = new System.Drawing.Point(38, 160);
-            this.CusEmailTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CusEmailTB.Name = "CusEmailTB";
-            this.CusEmailTB.Size = new System.Drawing.Size(187, 32);
-            this.CusEmailTB.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(26, 559);
+            this.label3.Location = new System.Drawing.Point(23, 447);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 46;
             this.label3.Text = "Booking";
             // 
@@ -420,28 +397,43 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label2.Location = new System.Drawing.Point(25, 319);
+            this.label2.Location = new System.Drawing.Point(22, 255);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 25);
+            this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 40;
             this.label2.Text = "Customer";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(24, 601);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(21, 481);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox5.Size = new System.Drawing.Size(71, 64);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 45;
             this.pictureBox5.TabStop = false;
             // 
+            // CusBook
+            // 
+            this.CusBook.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CusBook.FormattingEnabled = true;
+            this.CusBook.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.CusBook.Location = new System.Drawing.Point(34, 128);
+            this.CusBook.Name = "CusBook";
+            this.CusBook.Size = new System.Drawing.Size(161, 28);
+            this.CusBook.TabIndex = 49;
+            // 
+            // vehiclesBindingSource
+            // 
+            this.vehiclesBindingSource.DataSource = typeof(Transport_Management.Vehicles);
+            // 
             // Booking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 820);
+            this.ClientSize = new System.Drawing.Size(1157, 656);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.button1);
@@ -457,7 +449,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Booking";
             this.Text = "Booking";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -469,6 +460,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,17 +488,18 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox CusEmailTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ComboBox BDNameTB;
-        private System.Windows.Forms.ComboBox BVNameTB;
+        private System.Windows.Forms.ComboBox VeDriver;
+        private System.Windows.Forms.ComboBox VeBook;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox BamountTb;
+        private System.Windows.Forms.TextBox BAmount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker Rdate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker Pdate;
+        private System.Windows.Forms.ComboBox CusBook;
+        private System.Windows.Forms.BindingSource vehiclesBindingSource;
     }
 }
