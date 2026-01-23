@@ -33,5 +33,16 @@ namespace Transport_Management.Properties {
                 return ((string)(this["TransportDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TransportDB.m" +
+            "df;Integrated Security=True;Connect Timeout=30;Encrypt=True")]
+        public string TransportDBConnectionString1 {
+            get {
+                return ((string)(this["TransportDBConnectionString1"]));
+            }
+        }
     }
 }
