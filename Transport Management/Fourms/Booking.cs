@@ -5,9 +5,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Transport_Management
 {
@@ -266,7 +268,7 @@ namespace Transport_Management
             DateTime pickup = Pdate.Value;
             DateTime ret = Rdate.Value;
 
-            // Calculate number of days
+            
             int numDays = (ret - pickup).Days;
             if (numDays <= 0)
             {
@@ -328,7 +330,7 @@ namespace Transport_Management
 
                     insertCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Booking saved successfully!\nTotal Amount (with 5% tax): " + finalAmount.ToString("C"));
+                    MessageBox.Show("Booking saved successfully! Total Amount (with 5% tax): " + finalAmount.ToString("C"));
                 }
             }
             catch (Exception ex)
@@ -337,6 +339,117 @@ namespace Transport_Management
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+           
+            if (BGV.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a booking to delete.");
+                return;
+            }
+
+            int bookingID = Convert.ToInt32(BGV.SelectedRows[0].Cells["BookingID"].Value);
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this booking?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection c = new SqlConnection(con.ConnectionString))
+                    {
+                        c.Open();
+                        SqlCommand cmd = new SqlCommand("DELETE FROM BookingTb WHERE BookingID=@BookingID", c);
+                        cmd.Parameters.AddWithValue("@BookingID", bookingID);
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Booking deleted successfully!");
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        
+
+        private void BGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = BGV.Rows[e.RowIndex];
+                VeDriver.SelectedValue = row.Cells["Did"].Value.ToString();
+                VeBook.SelectedValue = row.Cells["VLp"].Value.ToString();
+                CusBook.SelectedValue = row.Cells["CusID"].Value.ToString();
+                Pdate.Value = Convert.ToDateTime(row.Cells["PDate"].Value);
+                Rdate.Value = Convert.ToDateTime(row.Cells["RDate"].Value);
+
+                
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection c = new SqlConnection(con.ConnectionString))
+                {
+                    c.Open();
+                    string query = @"SELECT Did,VLp, CusID, Pdate, Rdate, Amount FROM BookingTB WHERE 1=1"; 
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = c;
+                    if (VeDriver.SelectedIndex != -1)
+                    {
+                        query += " AND DriverID = @DriverID";
+                        cmd.Parameters.AddWithValue("@DriverID", VeDriver.SelectedValue);
+                    }
+
+                    if (VeBook.SelectedIndex != -1)
+                    {
+                        query += " AND VLp = @VeLp";
+                        cmd.Parameters.AddWithValue("@VeLp", VeBook.SelectedValue);
+                    }
+
+                    if (CusBook.SelectedIndex != -1)
+                    {
+                        query += " AND CusID = @CustomerID";
+                        cmd.Parameters.AddWithValue("@CustomerID", CusBook.SelectedValue);
+                    }
+
+                    if (Pdate.Value != null)
+                    {
+                        query += " AND PDate = @PickupDate";
+                        cmd.Parameters.AddWithValue("@PickupDate", Pdate.Value.Date);
+                    }
+
+                    if (Rdate.Value != null)
+                    {
+                        query += " AND RDate = @ReturnDate";
+                        cmd.Parameters.AddWithValue("@ReturnDate", Rdate.Value.Date);
+                    }
+
+                    cmd.CommandText = query;
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    BGV.DataSource = dt; 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 
