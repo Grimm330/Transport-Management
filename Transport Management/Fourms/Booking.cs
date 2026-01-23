@@ -201,6 +201,18 @@ namespace Transport_Management
 
                     cmdBooking.ExecuteNonQuery();
 
+                    SqlTransaction tran = con.BeginTransaction();
+                    SqlCommand cmdUpdateVehicle = new SqlCommand("UPDATE VehiclesTB SET VLSt='Booked' WHERE VLp=@VLp", con, tran);
+                    cmdUpdateVehicle.Parameters.AddWithValue("@VLp", VeBook.SelectedItem.ToString());
+                    cmdUpdateVehicle.ExecuteNonQuery();
+
+                 
+                    SqlCommand cmdUpdateDriver = new SqlCommand( "UPDATE DriverTB SET DrStatus='In-Trip' WHERE DrID=@ID", con, tran);
+                    cmdUpdateDriver.Parameters.AddWithValue("@ID", VeDriver.SelectedItem.ToString());
+                    cmdUpdateDriver.ExecuteNonQuery();
+                    tran.Commit();
+
+
                     MessageBox.Show("Booking Added Successfully! Total Amount: " + totalAmount.ToString("C"));
 
                     con.Close();
@@ -229,6 +241,11 @@ namespace Transport_Management
         private void VeDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetDrivers();
+        }
+
+        private void vehiclesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
