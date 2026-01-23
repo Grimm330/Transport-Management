@@ -43,12 +43,14 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CusBook = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Rdate = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.Pdate = new System.Windows.Forms.DateTimePicker();
             this.VeDriver = new System.Windows.Forms.ComboBox();
             this.VeBook = new System.Windows.Forms.ComboBox();
+            this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,17 +63,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.CusBook = new System.Windows.Forms.ComboBox();
-            this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -227,6 +227,16 @@
             this.panel1.Size = new System.Drawing.Size(1030, 643);
             this.panel1.TabIndex = 39;
             // 
+            // CusBook
+            // 
+            this.CusBook.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CusBook.FormattingEnabled = true;
+            this.CusBook.Location = new System.Drawing.Point(34, 128);
+            this.CusBook.Name = "CusBook";
+            this.CusBook.Size = new System.Drawing.Size(161, 28);
+            this.CusBook.TabIndex = 49;
+            this.CusBook.SelectedIndexChanged += new System.EventHandler(this.CusBook_SelectedIndexChanged);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -285,6 +295,10 @@
             this.VeBook.Size = new System.Drawing.Size(134, 28);
             this.VeBook.TabIndex = 43;
             this.VeBook.SelectedIndexChanged += new System.EventHandler(this.VeBook_SelectedIndexChanged);
+            // 
+            // vehiclesBindingSource
+            // 
+            this.vehiclesBindingSource.DataSource = typeof(Transport_Management.Vehicles);
             // 
             // BGV
             // 
@@ -413,22 +427,6 @@
             this.pictureBox5.TabIndex = 45;
             this.pictureBox5.TabStop = false;
             // 
-            // CusBook
-            // 
-            this.CusBook.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CusBook.FormattingEnabled = true;
-            this.CusBook.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.CusBook.Location = new System.Drawing.Point(34, 128);
-            this.CusBook.Name = "CusBook";
-            this.CusBook.Size = new System.Drawing.Size(161, 28);
-            this.CusBook.TabIndex = 49;
-            // 
-            // vehiclesBindingSource
-            // 
-            this.vehiclesBindingSource.DataSource = typeof(Transport_Management.Vehicles);
-            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -458,9 +456,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

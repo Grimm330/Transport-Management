@@ -16,38 +16,69 @@ namespace Transport_Management
         public Booking()
         {
             InitializeComponent();
+            GetCustomers();
+            GetVeHicles();
         }
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\TransportDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
         private void GetVeHicles()
         {
-           
             try
             {
-                con.Open();
+                using (SqlConnection c = new SqlConnection(con.ConnectionString))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(
+                        "SELECT VLLp FROM VehiclesTB WHERE VLSt = 'Available'", c);
 
-                SqlCommand cmd = new SqlCommand( "SELECT VLName FROM VehiclesTB WHERE VLSt = 'Available'", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                    VeBook.DataSource = null;
+                    VeBook.Items.Clear();
 
-                VeBook.DataSource = dt;
-                VeBook.DisplayMember = "VLName";
-                VeBook.ValueMember = "VLName";
-                VeBook.SelectedIndex = -1; // optional: no default selection
+                    VeBook.DisplayMember = "VLLp";
+                    VeBook.ValueMember = "VLLp";
+                    VeBook.DataSource = dt;
+                    VeBook.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
+        }
+
+
+
+        private void GetCustomers()
+        {
+            try
             {
-                con.Close();
+                using (SqlConnection c = new SqlConnection(
+                    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\TransportDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False"))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter("SELECT CusID FROM CustomerTB", c))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        CusBook.DataSource = null;
+                        CusBook.Items.Clear();
+
+                        CusBook.DisplayMember = "CusID";
+                        CusBook.ValueMember = "CusID";
+                        CusBook.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
 
-        
+
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -56,6 +87,11 @@ namespace Transport_Management
         private void VeBook_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetVeHicles();
+        }
+
+        private void CusBook_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetCustomers();
         }
     }
 }
