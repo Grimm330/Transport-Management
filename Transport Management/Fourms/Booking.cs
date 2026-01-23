@@ -247,5 +247,96 @@ namespace Transport_Management
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+         
+        
+            
+            if (VeDriver.SelectedIndex == -1 || VeBook.SelectedIndex == -1 || CusBook.SelectedIndex == -1 ||
+                Pdate.Value == null || Rdate.Value == null)
+            {
+                MessageBox.Show("Please fill all required fields!");
+                return;
+            }
+
+            string driverID = VeDriver.SelectedValue.ToString();
+            string vehicleID = VeBook.SelectedValue.ToString();
+            string customerID = CusBook.SelectedValue.ToString();
+            DateTime pickup = Pdate.Value;
+            DateTime ret = Rdate.Value;
+
+            // Calculate number of days
+            int numDays = (ret - pickup).Days;
+            if (numDays <= 0)
+            {
+                MessageBox.Show("Return date must be after pickup date!");
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection c = new SqlConnection(con.ConnectionString))
+                {
+                    c.Open();
+
+                   
+                    SqlCommand driverCmd = new SqlCommand("SELECT DrName, DrWage FROM DriverTb WHERE DrID=@DrID", c);
+                    driverCmd.Parameters.AddWithValue("@DrID", driverID);
+                    SqlDataReader dr = driverCmd.ExecuteReader();
+                    string driverName = "";
+                    decimal driverWage = 0;
+                    if (dr.Read())
+                    {
+                        driverName = dr["DrName"].ToString();
+                        driverWage = Convert.ToDecimal(dr["DrWage"]);
+                    }
+                    dr.Close();
+
+                    
+                    SqlCommand vehicleCmd = new SqlCommand("SELECT VLNmae, Amount FROM VehiclesTB WHERE VLLp=@VLLp", c);
+                    vehicleCmd.Parameters.AddWithValue("@VLName", vehicleID);
+                    SqlDataReader vr = vehicleCmd.ExecuteReader();
+                    string vehicleName = "";
+                    decimal vehicleCharge = 0;
+                    if (vr.Read())
+                    {
+                        vehicleName = vr["VLName"].ToString();
+                        vehicleCharge = Convert.ToDecimal(vr["Amount"]);
+                    }
+                    vr.Close();
+
+                   
+                    decimal totalAmount = (vehicleCharge + driverWage) * numDays;
+                    decimal tax = totalAmount * 0.05m;
+                    decimal finalAmount = totalAmount + tax;
+
+                    
+                    SqlCommand insertCmd = new SqlCommand(
+                        "INSERT INTO BookingTb (DriverID, DriverName, VehicleID, VehicleName, CustomerID, PickupDate, ReturnDate, Days, Amount) " +
+                        "VALUES (@DrID, @DrName, @VLID, @VLName, @CusID, @Pickup, @Return, @Days, @Amount)", c);
+
+                    insertCmd.Parameters.AddWithValue("@DrID", driverID);
+                    insertCmd.Parameters.AddWithValue("@DrName", driverName);
+                    insertCmd.Parameters.AddWithValue("@VLID", vehicleID);
+                    insertCmd.Parameters.AddWithValue("@VLName", vehicleName);
+                    insertCmd.Parameters.AddWithValue("@CusID", customerID);
+                    insertCmd.Parameters.AddWithValue("@Pickup", pickup);
+                    insertCmd.Parameters.AddWithValue("@Return", ret);
+                    insertCmd.Parameters.AddWithValue("@Days", numDays);
+                    insertCmd.Parameters.AddWithValue("@Amount", finalAmount);
+
+                    insertCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Booking saved successfully!\nTotal Amount (with 5% tax): " + finalAmount.ToString("C"));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }
+
