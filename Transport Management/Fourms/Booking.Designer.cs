@@ -56,8 +56,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.BAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -217,8 +215,6 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.BAmount);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -241,7 +237,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(772, 143);
+            this.label8.Location = new System.Drawing.Point(783, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 20);
             this.label8.TabIndex = 48;
@@ -250,7 +246,7 @@
             // Rdate
             // 
             this.Rdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rdate.Location = new System.Drawing.Point(767, 166);
+            this.Rdate.Location = new System.Drawing.Point(787, 126);
             this.Rdate.Name = "Rdate";
             this.Rdate.Size = new System.Drawing.Size(210, 27);
             this.Rdate.TabIndex = 47;
@@ -259,7 +255,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(763, 70);
+            this.label10.Location = new System.Drawing.Point(555, 103);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 20);
             this.label10.TabIndex = 46;
@@ -268,7 +264,7 @@
             // Pdate
             // 
             this.Pdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pdate.Location = new System.Drawing.Point(767, 93);
+            this.Pdate.Location = new System.Drawing.Point(559, 126);
             this.Pdate.Name = "Pdate";
             this.Pdate.Size = new System.Drawing.Size(210, 27);
             this.Pdate.TabIndex = 45;
@@ -277,13 +273,11 @@
             // 
             this.VeDriver.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VeDriver.FormattingEnabled = true;
-            this.VeDriver.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.VeDriver.Location = new System.Drawing.Point(399, 128);
             this.VeDriver.Name = "VeDriver";
             this.VeDriver.Size = new System.Drawing.Size(134, 28);
             this.VeDriver.TabIndex = 44;
+            this.VeDriver.SelectedIndexChanged += new System.EventHandler(this.VeDriver_SelectedIndexChanged);
             // 
             // VeBook
             // 
@@ -354,24 +348,6 @@
             this.label14.Size = new System.Drawing.Size(78, 20);
             this.label14.TabIndex = 27;
             this.label14.Text = "Vehicles";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(567, 105);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 20);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Amount";
-            // 
-            // BAmount
-            // 
-            this.BAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAmount.Location = new System.Drawing.Point(571, 128);
-            this.BAmount.Name = "BAmount";
-            this.BAmount.Size = new System.Drawing.Size(154, 28);
-            this.BAmount.TabIndex = 17;
             // 
             // label7
             // 
@@ -491,8 +467,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.ComboBox VeDriver;
         private System.Windows.Forms.ComboBox VeBook;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox BAmount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker Rdate;
         private System.Windows.Forms.Label label10;
