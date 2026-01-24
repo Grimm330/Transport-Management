@@ -19,24 +19,28 @@ namespace Transport_Management
         {
             InitializeComponent();
         }
+        private ErrorProvider errorProvider1 = new ErrorProvider();
+
         private bool Validatelog()
         {
+            bool isValid = true;
+            errorProvider1.Clear();
             if (string.IsNullOrWhiteSpace(Lemail.Text))
             {
-                MessageBox.Show("Name is required");
-                Lemail.Focus();
-                return false;
+                errorProvider1.SetError(Lemail, "Email is required");
+                isValid = false;
+            
+           
             }
-
             if (string.IsNullOrWhiteSpace(Lpass.Text))
             {
-                MessageBox.Show("Enter a phone number");
-                Lpass.Focus();
-                return false;
+                errorProvider1.SetError(Lpass, "Password is required");
+                isValid = false;
             }
 
-            return true;
+            return isValid;
         }
+
         private void LoginFourm_Load(object sender, EventArgs e)
         {
 

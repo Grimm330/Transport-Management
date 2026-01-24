@@ -28,47 +28,43 @@ namespace Transport_Management
             Spass.Clear();
             SType.SelectedIndex = -1;
         }
+        private ErrorProvider errorProvider1 = new ErrorProvider();
         private bool ValidateSignup()
         {
-            
+            bool isValid = true;
+            errorProvider1.Clear();
             if (string.IsNullOrWhiteSpace(SName.Text))
             {
-                MessageBox.Show("Name is required");
-                SName.Focus();
-                return false;
+                errorProvider1.SetError(SName, "Name is required");
+                isValid = false;
             }
-
-            
             if (string.IsNullOrWhiteSpace(SPhone.Text))
             {
-                MessageBox.Show("Enter a phone number");
-                SPhone.Focus();
-                return false;
+                errorProvider1.SetError(SPhone, "Phone number is required");
+                isValid = false;
             }
-
+            else if (!long.TryParse(SPhone.Text, out _))
+            {
+                errorProvider1.SetError(SPhone, "Phone number must be digits only");
+                isValid = false;
+            }
             if (string.IsNullOrWhiteSpace(SEmail.Text))
             {
-                MessageBox.Show("Enter a email address");
-                SEmail.Focus();
-                return false;
+                errorProvider1.SetError(SEmail, "Email is required");
+                isValid = false;
             }
             if (SType.SelectedIndex == -1)
             {
-                MessageBox.Show("Select user type");
-                SType.DroppedDown = true;
-                return false;
+                errorProvider1.SetError(SType, "Select user type");
+                isValid = false;
             }
-            if (string.IsNullOrWhiteSpace(Spass.Text) || Spass.Text.Length < 6)
+            if (string.IsNullOrWhiteSpace(Spass.Text))
             {
-                MessageBox.Show("Password must be at least 6 characters");
-                Spass.Focus();
-                return false;
+                errorProvider1.SetError(Spass, "Password is required");
+                isValid = false;
             }
-
-            return true;
+            return isValid;
         }
-
-
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
