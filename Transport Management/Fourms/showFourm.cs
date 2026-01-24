@@ -15,8 +15,9 @@ namespace Transport_Management.Fourms
         public showFourm()
         {
             InitializeComponent();
+           
         }
-
+        
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             ShowPanel.Controls.Clear();
@@ -55,11 +56,29 @@ namespace Transport_Management.Fourms
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-             ShowPanel.Controls.Clear();
+            ShowPanel.Controls.Clear();
             Dashbord dash = new Dashbord();
             dash.TopLevel=false;
             ShowPanel.Controls.Add(dash);
             dash.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ShowPanel.Controls.Clear();
+            Profile pro = new Profile();
+            pro.TopLevel = false;
+            ShowPanel.Controls.Add(pro);
+            pro.Show();
+
+        }
+
+        private void ShowPanel_Paint(object sender, PaintEventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.TopLevel = false; 
+            ShowPanel.Controls.Add(profile);
+            profile.Show();
         }
     }
 }

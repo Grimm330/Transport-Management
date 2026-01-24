@@ -157,6 +157,7 @@
             this.ShowPanel.Name = "ShowPanel";
             this.ShowPanel.Size = new System.Drawing.Size(1055, 672);
             this.ShowPanel.TabIndex = 25;
+            this.ShowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ShowPanel_Paint);
             // 
             // button1
             // 
@@ -177,6 +178,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox4
             // 
