@@ -50,5 +50,28 @@ namespace Transport_Management
         {
             LoadGrid("DriverTb");
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            LoadGrid("VehiclesTB");
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            LoadGrid("CustomerTB");
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            LoadGrid("DriverTb");
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            LoadGrid("BookingTB");
+
+        }
     }
 }
