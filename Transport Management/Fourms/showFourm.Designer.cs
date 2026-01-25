@@ -168,6 +168,7 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -221,6 +222,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "showFourm";
             this.Text = "Transport Managment ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

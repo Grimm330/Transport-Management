@@ -80,5 +80,12 @@ namespace Transport_Management.Fourms
             ShowPanel.Controls.Add(profile);
             profile.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginFourm loginFourm = new LoginFourm();
+            loginFourm.Show();
+            this.Hide();
+        }
     }
 }
