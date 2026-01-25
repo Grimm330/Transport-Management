@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Transport_Management
 {
     public partial class Booking : Form
     {
+        DataAccess db = new DataAccess();
+
         public Booking()
         {
             InitializeComponent();
@@ -34,422 +28,179 @@ namespace Transport_Management
         }
         private void showb()
         {
-            con.Open();
-            string Quray = "SELECT * FROM BookingTB";
-            SqlDataAdapter sda = new SqlDataAdapter(Quray, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            BGV.DataSource = ds.Tables[0];
-
-            con.Close();
+            string query = "SELECT * FROM BookingTB";
+            BGV.DataSource = db.GetData(query);
         }
-
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\TransportDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
-        private void GetVeHicles()
-        {
-            try
-            {
-                using (SqlConnection c = new SqlConnection(con.ConnectionString))
-                {
-                    SqlDataAdapter da = new SqlDataAdapter( "SELECT VLLp FROM VehiclesTB WHERE VLSt = 'Available'", c);
-
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    VeBook.DataSource = null;
-                    VeBook.Items.Clear();
-
-                    VeBook.DisplayMember = "VLLp";
-                    VeBook.ValueMember = "VLLp";
-                    VeBook.DataSource = dt;
-              
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-
         private void GetCustomers()
         {
-            try
-            {
-                using (SqlConnection c = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\TransportDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False"))
-                {
-                    using (SqlDataAdapter da = new SqlDataAdapter("SELECT CusID FROM CustomerTB", c))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
+            string query = "SELECT CusID FROM CustomerTB";
+            DataTable dt = db.GetData(query);
 
-                        CusBook.DataSource = null;
-                        CusBook.Items.Clear();
+            CusBook.DataSource = null;
+            CusBook.Items.Clear();
+            CusBook.DisplayMember = "CusID";
+            CusBook.ValueMember = "CusID";
+            CusBook.DataSource = dt;
+        }
+        private void GetVeHicles()
+        {
+            string query = "SELECT VLLp FROM VehiclesTB WHERE VLSt='Available'";
+            DataTable dt = db.GetData(query);
 
-                        CusBook.DisplayMember = "CusID";
-                        CusBook.ValueMember = "CusID";
-                        CusBook.DataSource = dt;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            VeBook.DataSource = null;
+            VeBook.Items.Clear();
+            VeBook.DisplayMember = "VLLp";
+            VeBook.ValueMember = "VLLp";
+            VeBook.DataSource = dt;
         }
         private void GetDrivers()
         {
-            try
-            {
-                using (SqlConnection c = new SqlConnection(con.ConnectionString))
-                {
-                    SqlDataAdapter da = new SqlDataAdapter(
-                        "SELECT DrID FROM DriverTb WHERE DrStatus = 'Available'", c);
+            string query = "SELECT DrID FROM DriverTB WHERE DrStatus='Available'";
+            DataTable dt = db.GetData(query);
 
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    VeDriver.DataSource = null;
-                    VeDriver.Items.Clear();
-
-                    VeDriver.DisplayMember = "DrID";
-                    VeDriver.ValueMember = "DrID";
-                    VeDriver.DataSource = dt;
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            VeDriver.DataSource = null;
+            VeDriver.Items.Clear();
+            VeDriver.DisplayMember = "DrID";
+            VeDriver.ValueMember = "DrID";
+            VeDriver.DataSource = dt;
         }
-           private void button2_Click(object sender, EventArgs e)
-           {
-            if (CusBook.SelectedIndex == -1 || VeBook.SelectedIndex == -1 || VeDriver.SelectedIndex == -1 || Pdate.Value == null || Rdate.Value == null)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (CusBook.SelectedIndex == -1 || VeBook.SelectedIndex == -1 ||
+                VeDriver.SelectedIndex == -1)
             {
                 MessageBox.Show("Missing Information");
-            }
-            else
-            {
-                try
-                {
-                    
-                    int days = (Rdate.Value - Pdate.Value).Days;
-                    if (days <= 0)
-                    {
-                        MessageBox.Show("Return date must be after pickup date.");
-                        return;
-                    }
-
-                    con.Open();
-
-                   
-                    SqlCommand cmdCus = new SqlCommand("SELECT CusEmail FROM CustomerTB WHERE CusID=@ID", con);
-                    cmdCus.Parameters.AddWithValue("@ID", CusBook.SelectedItem.ToString()); 
-                    SqlDataReader drCus = cmdCus.ExecuteReader();
-                    string cusEmail = "";
-                    if (drCus.Read())
-                    {
-                       
-                        cusEmail = drCus["CusEmail"].ToString();
-                    }
-                    drCus.Close();
-
-             
-                    SqlCommand cmdVe = new SqlCommand("SELECT VName,Charge FROM VehiclesTB WHERE VLp=@VLp", con);
-                    cmdVe.Parameters.AddWithValue("@VLp", VeBook.SelectedItem.ToString()); 
-                    SqlDataReader drVe = cmdVe.ExecuteReader();
-                    string vName = "";
-                    decimal vCharge = 0;
-                    if (drVe.Read())
-                    {
-                        vName = drVe["VName"].ToString();
-                        vCharge = Convert.ToDecimal(drVe["Amount"]);
-                    }
-                    drVe.Close();
-
-                    
-                    SqlCommand cmdDr = new SqlCommand("SELECT DrName,DWage FROM DriverTB WHERE DrID=@ID", con);
-                    cmdDr.Parameters.AddWithValue("@ID", VeDriver.SelectedItem.ToString()); 
-                    SqlDataReader drDr = cmdDr.ExecuteReader();
-                    string drName = "";
-                    decimal drWage = 0;
-                    if (drDr.Read())
-                    {
-                        drName = drDr["DrName"].ToString();
-                        drWage = Convert.ToDecimal(drDr["DWage"]);
-                    }
-                    drDr.Close();
-
-                    decimal amount = (vCharge + drWage) * days;
-                    decimal totalAmount = amount + (amount * 0.05m); 
-
-                    
-                    SqlCommand cmdBooking = new SqlCommand(
-                        "INSERT INTO BookingTB(CusID,CusEmail,VLp,VName,Did,DrN,Amount,PDate,RDate) " +
-                        "VALUES(@CI,@CE,@VL,@VN,@DI,@DN,@AM,@PD,@RD)", con);
-
-                    cmdBooking.Parameters.AddWithValue("@CI", CusBook.SelectedItem.ToString());
-                    cmdBooking.Parameters.AddWithValue("@CE", cusEmail);
-                    cmdBooking.Parameters.AddWithValue("@VL", VeBook.SelectedItem.ToString());
-                    cmdBooking.Parameters.AddWithValue("@VN", vName);
-                    cmdBooking.Parameters.AddWithValue("@DI", VeDriver.SelectedItem.ToString());
-                    cmdBooking.Parameters.AddWithValue("@DN", drName);
-                    cmdBooking.Parameters.AddWithValue("@AM", totalAmount);
-                    cmdBooking.Parameters.AddWithValue("@PD", Pdate.Value);
-                    cmdBooking.Parameters.AddWithValue("@RD", Rdate.Value);
-
-                    cmdBooking.ExecuteNonQuery();
-
-                    SqlTransaction tran = con.BeginTransaction();
-                    SqlCommand cmdUpdateVehicle = new SqlCommand("UPDATE VehiclesTB SET VLSt='Booked' WHERE VLp=@VLp", con, tran);
-                    cmdUpdateVehicle.Parameters.AddWithValue("@VLp", VeBook.SelectedItem.ToString());
-                    cmdUpdateVehicle.ExecuteNonQuery();
-
-                 
-                    SqlCommand cmdUpdateDriver = new SqlCommand( "UPDATE DriverTB SET DrStatus='In-Trip' WHERE DrID=@ID", con, tran);
-                    cmdUpdateDriver.Parameters.AddWithValue("@ID", VeDriver.SelectedItem.ToString());
-                    cmdUpdateDriver.ExecuteNonQuery();
-                    tran.Commit();
-
-
-                    MessageBox.Show("Booking Added Successfully! Total Amount: " + totalAmount.ToString("C"));
-
-                    con.Close();
-
-                    clear();    
-                    Show();  
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                    con.Close();
-                }
-            }
-           }
-
-        private void VeBook_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GetVeHicles();
-        }
-
-        private void CusBook_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GetCustomers();
-        }
-
-        private void VeDriver_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GetDrivers();
-        }
-
-        private void vehiclesBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-         
-        
-            
-            if (VeDriver.SelectedIndex == -1 || VeBook.SelectedIndex == -1 || CusBook.SelectedIndex == -1 ||
-                Pdate.Value == null || Rdate.Value == null)
-            {
-                MessageBox.Show("Please fill all required fields!");
                 return;
             }
 
-            string driverID = VeDriver.SelectedValue.ToString();
-            string vehicleID = VeBook.SelectedValue.ToString();
-            string customerID = CusBook.SelectedValue.ToString();
-            DateTime pickup = Pdate.Value;
-            DateTime ret = Rdate.Value;
-
-            
-            int numDays = (ret - pickup).Days;
-            if (numDays <= 0)
+            int days = (Rdate.Value - Pdate.Value).Days;
+            if (days <= 0)
             {
-                MessageBox.Show("Return date must be after pickup date!");
+                MessageBox.Show("Return date must be after pickup date");
                 return;
             }
 
             try
             {
-                using (SqlConnection c = new SqlConnection(con.ConnectionString))
+                string cusEmail = db.ExecuteScalar( "SELECT CusEmail FROM CustomerTB WHERE CusID=@ID",
+                    new[] 
+                    {
+                        new SqlParameter("@ID", CusBook.SelectedValue) 
+                    }
+                ).ToString();
+                DataTable vdt = db.GetData( "SELECT VName, Amount FROM VehiclesTB WHERE VLLp=@VL",
+                    new[]
+                    { 
+                        new SqlParameter("@VL", VeBook.SelectedValue)
+                    }
+                );
+
+                string vName = vdt.Rows[0]["VName"].ToString();
+                decimal vCharge = Convert.ToDecimal(vdt.Rows[0]["Amount"]);
+
+            
+                DataTable ddt = db.GetData( "SELECT DrName, DWage FROM DriverTB WHERE DrID=@ID",
+                    new[] 
+                    { 
+                        new SqlParameter("@ID", VeDriver.SelectedValue)
+                    }
+                );
+
+                string drName = ddt.Rows[0]["DrName"].ToString();
+                decimal drWage = Convert.ToDecimal(ddt.Rows[0]["DWage"]);
+
+              
+                decimal baseAmount = (vCharge + drWage) * days;
+                decimal totalAmount = baseAmount + (baseAmount * 0.05m);
+                string insertQuery =  @"INSERT INTO BookingTB(CusID, CusEmail, VLp, VName, Did, DrN, Amount, PDate, RDate) VALUES (@CI,@CE,@VL,@VN,@DI,@DN,@AM,@PD,@RD)";
+
+                SqlParameter[] insertParams =
                 {
-                    c.Open();
+                    new SqlParameter("@CI", CusBook.SelectedValue),
+                    new SqlParameter("@CE", cusEmail),
+                    new SqlParameter("@VL", VeBook.SelectedValue),
+                    new SqlParameter("@VN", vName),
+                    new SqlParameter("@DI", VeDriver.SelectedValue),
+                    new SqlParameter("@DN", drName),
+                    new SqlParameter("@AM", totalAmount),
+                    new SqlParameter("@PD", Pdate.Value),
+                    new SqlParameter("@RD", Rdate.Value)
+                };
 
-                   
-                    SqlCommand driverCmd = new SqlCommand("SELECT DrName, DrWage FROM DriverTb WHERE DrID=@DrID", c);
-                    driverCmd.Parameters.AddWithValue("@DrID", driverID);
-                    SqlDataReader dr = driverCmd.ExecuteReader();
-                    string driverName = "";
-                    decimal driverWage = 0;
-                    if (dr.Read())
-                    {
-                        driverName = dr["DrName"].ToString();
-                        driverWage = Convert.ToDecimal(dr["DrWage"]);
-                    }
-                    dr.Close();
+                db.Execute(insertQuery, insertParams);
+                db.Execute("UPDATE VehiclesTB SET VLSt='Booked' WHERE VLLp=@VL",
+                    new[] { new SqlParameter("@VL", VeBook.SelectedValue) });
 
-                    
-                    SqlCommand vehicleCmd = new SqlCommand("SELECT VLNmae, Amount FROM VehiclesTB WHERE VLLp=@VLLp", c);
-                    vehicleCmd.Parameters.AddWithValue("@VLName", vehicleID);
-                    SqlDataReader vr = vehicleCmd.ExecuteReader();
-                    string vehicleName = "";
-                    decimal vehicleCharge = 0;
-                    if (vr.Read())
-                    {
-                        vehicleName = vr["VLName"].ToString();
-                        vehicleCharge = Convert.ToDecimal(vr["Amount"]);
-                    }
-                    vr.Close();
+                db.Execute("UPDATE DriverTB SET DrStatus='In-Trip' WHERE DrID=@ID",
+                    new[] { new SqlParameter("@ID", VeDriver.SelectedValue) });
 
-                   
-                    decimal totalAmount = (vehicleCharge + driverWage) * numDays;
-                    decimal tax = totalAmount * 0.05m;
-                    decimal finalAmount = totalAmount + tax;
+                MessageBox.Show("Booking Added!\nTotal Amount: " + totalAmount);
 
-                    
-                    SqlCommand insertCmd = new SqlCommand(
-                        "INSERT INTO BookingTb (DriverID, DriverName, VehicleID, VehicleName, CustomerID, PickupDate, ReturnDate, Days, Amount) " +
-                        "VALUES (@DrID, @DrName, @VLID, @VLName, @CusID, @Pickup, @Return, @Days, @Amount)", c);
-
-                    insertCmd.Parameters.AddWithValue("@DrID", driverID);
-                    insertCmd.Parameters.AddWithValue("@DrName", driverName);
-                    insertCmd.Parameters.AddWithValue("@VLID", vehicleID);
-                    insertCmd.Parameters.AddWithValue("@VLName", vehicleName);
-                    insertCmd.Parameters.AddWithValue("@CusID", customerID);
-                    insertCmd.Parameters.AddWithValue("@Pickup", pickup);
-                    insertCmd.Parameters.AddWithValue("@Return", ret);
-                    insertCmd.Parameters.AddWithValue("@Days", numDays);
-                    insertCmd.Parameters.AddWithValue("@Amount", finalAmount);
-
-                    insertCmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Booking saved successfully! Total Amount (with 5% tax): " + finalAmount.ToString("C"));
-                }
+                clear();
+                showb();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
-           
             if (BGV.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a booking to delete.");
+                MessageBox.Show("Select a booking first");
                 return;
             }
 
             int bookingID = Convert.ToInt32(BGV.SelectedRows[0].Cells["BookingID"].Value);
 
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to delete this booking?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (result == DialogResult.Yes)
+            if (MessageBox.Show("Delete this booking?", "Confirm",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                try
-                {
-                    using (SqlConnection c = new SqlConnection(con.ConnectionString))
-                    {
-                        c.Open();
-                        SqlCommand cmd = new SqlCommand("DELETE FROM BookingTb WHERE BookingID=@BookingID", c);
-                        cmd.Parameters.AddWithValue("@BookingID", bookingID);
-                        cmd.ExecuteNonQuery();
+                db.Execute(
+                    "DELETE FROM BookingTB WHERE BookingID=@ID",
+                    new[] { new SqlParameter("@ID", bookingID) }
+                );
 
-                        MessageBox.Show("Booking deleted successfully!");
-                    }
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                showb();
             }
         }
-
-        
-
         private void BGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = BGV.Rows[e.RowIndex];
-                VeDriver.SelectedValue = row.Cells["Did"].Value.ToString();
-                VeBook.SelectedValue = row.Cells["VLp"].Value.ToString();
-                CusBook.SelectedValue = row.Cells["CusID"].Value.ToString();
+                VeDriver.SelectedValue = row.Cells["Did"].Value;
+                VeBook.SelectedValue = row.Cells["VLp"].Value;
+                CusBook.SelectedValue = row.Cells["CusID"].Value;
                 Pdate.Value = Convert.ToDateTime(row.Cells["PDate"].Value);
                 Rdate.Value = Convert.ToDateTime(row.Cells["RDate"].Value);
-
-                
             }
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
-            try
+            string query = "SELECT * FROM BookingTB WHERE 1=1";
+            var list = new System.Collections.Generic.List<SqlParameter>();
+
+            if (CusBook.SelectedIndex != -1)
             {
-                using (SqlConnection c = new SqlConnection(con.ConnectionString))
-                {
-                    c.Open();
-                    string query = @"SELECT Did,VLp, CusID, Pdate, Rdate, Amount FROM BookingTB WHERE 1=1"; 
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = c;
-                    if (VeDriver.SelectedIndex != -1)
-                    {
-                        query += " AND DriverID = @DriverID";
-                        cmd.Parameters.AddWithValue("@DriverID", VeDriver.SelectedValue);
-                    }
-
-                    if (VeBook.SelectedIndex != -1)
-                    {
-                        query += " AND VLp = @VeLp";
-                        cmd.Parameters.AddWithValue("@VeLp", VeBook.SelectedValue);
-                    }
-
-                    if (CusBook.SelectedIndex != -1)
-                    {
-                        query += " AND CusID = @CustomerID";
-                        cmd.Parameters.AddWithValue("@CustomerID", CusBook.SelectedValue);
-                    }
-
-                    if (Pdate.Value != null)
-                    {
-                        query += " AND PDate = @PickupDate";
-                        cmd.Parameters.AddWithValue("@PickupDate", Pdate.Value.Date);
-                    }
-
-                    if (Rdate.Value != null)
-                    {
-                        query += " AND RDate = @ReturnDate";
-                        cmd.Parameters.AddWithValue("@ReturnDate", Rdate.Value.Date);
-                    }
-
-                    cmd.CommandText = query;
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    BGV.DataSource = dt; 
-                }
+                query += " AND CusID=@C";
+                list.Add(new SqlParameter("@C", CusBook.SelectedValue));
             }
-            catch (Exception ex)
+
+            if (VeBook.SelectedIndex != -1)
             {
-                MessageBox.Show(ex.Message);
+                query += " AND VLp=@V";
+                list.Add(new SqlParameter("@V", VeBook.SelectedValue));
             }
+
+            if (VeDriver.SelectedIndex != -1)
+            {
+                query += " AND Did=@D";
+                list.Add(new SqlParameter("@D", VeDriver.SelectedValue));
+            }
+
+            BGV.DataSource = db.GetData(query, list.ToArray());
         }
     }
 }
-
