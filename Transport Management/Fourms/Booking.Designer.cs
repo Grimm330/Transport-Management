@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Booking));
-            this.button5 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CusBook = new System.Windows.Forms.ComboBox();
@@ -53,18 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DarkCyan;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(693, 210);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 35);
-            this.button5.TabIndex = 42;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -85,7 +72,6 @@
             this.panel1.Controls.Add(this.Pdate);
             this.panel1.Controls.Add(this.VeDriver);
             this.panel1.Controls.Add(this.VeBook);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.BGV);
             this.panel1.Controls.Add(this.button4);
@@ -108,7 +94,6 @@
             this.CusBook.Name = "CusBook";
             this.CusBook.Size = new System.Drawing.Size(161, 28);
             this.CusBook.TabIndex = 49;
-            this.CusBook.SelectedIndexChanged += new System.EventHandler(this.CusBook_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -154,7 +139,6 @@
             this.VeDriver.Name = "VeDriver";
             this.VeDriver.Size = new System.Drawing.Size(134, 28);
             this.VeDriver.TabIndex = 44;
-            this.VeDriver.SelectedIndexChanged += new System.EventHandler(this.VeDriver_SelectedIndexChanged);
             // 
             // VeBook
             // 
@@ -165,12 +149,10 @@
             this.VeBook.Name = "VeBook";
             this.VeBook.Size = new System.Drawing.Size(134, 28);
             this.VeBook.TabIndex = 43;
-            this.VeBook.SelectedIndexChanged += new System.EventHandler(this.VeBook_SelectedIndexChanged);
             // 
             // vehiclesBindingSource
             // 
             this.vehiclesBindingSource.DataSource = typeof(Transport_Management.Vehicles);
-            this.vehiclesBindingSource.CurrentChanged += new System.EventHandler(this.vehiclesBindingSource_CurrentChanged);
             // 
             // BGV
             // 
@@ -182,13 +164,12 @@
             this.BGV.RowTemplate.Height = 24;
             this.BGV.Size = new System.Drawing.Size(1031, 384);
             this.BGV.TabIndex = 31;
-            this.BGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BGV_CellContentClick);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(542, 210);
+            this.button4.Location = new System.Drawing.Point(612, 212);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 35);
             this.button4.TabIndex = 30;
@@ -200,19 +181,18 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Goldenrod;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(399, 210);
+            this.button3.Location = new System.Drawing.Point(469, 212);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 35);
             this.button3.TabIndex = 29;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(264, 210);
+            this.button2.Location = new System.Drawing.Point(334, 212);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 35);
             this.button2.TabIndex = 28;
@@ -270,7 +250,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView BGV;

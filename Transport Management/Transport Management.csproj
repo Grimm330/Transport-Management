@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcess.cs" />
     <Compile Include="Fourms\Booking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +93,24 @@
     <Compile Include="Fourms\LoginFourm.Designer.cs">
       <DependentUpon>LoginFourm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fourms\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fourms\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fourms\showFourm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fourms\showFourm.Designer.cs">
+      <DependentUpon>showFourm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fourms\Ubook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fourms\Ubook.Designer.cs">
+      <DependentUpon>Ubook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fourms\UserBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +131,6 @@
     <Compile Include="Fourms\Vehicles.Designer.cs">
       <DependentUpon>Vehicles.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransportDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TransportDBDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Fourms\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +145,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fourms\LoginFourm.resx">
       <DependentUpon>LoginFourm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fourms\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fourms\showFourm.resx">
+      <DependentUpon>showFourm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fourms\Ubook.resx">
+      <DependentUpon>Ubook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fourms\UserBook.resx">
       <DependentUpon>UserBook.cs</DependentUpon>
@@ -144,20 +182,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TransportDBDataSet.xsc">
-      <DependentUpon>TransportDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TransportDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TransportDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TransportDBDataSet.xss">
-      <DependentUpon>TransportDBDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TransportDB.mdf" />
+    <Content Include="TransportDB_log.ldf">
+      <DependentUpon>TransportDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashbord));
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -70,7 +70,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.DGV);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel6);
@@ -86,16 +86,16 @@
             this.panel1.Size = new System.Drawing.Size(1055, 653);
             this.panel1.TabIndex = 53;
             // 
-            // dataGridView1
+            // DGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 248);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 361);
-            this.dataGridView1.TabIndex = 32;
+            this.DGV.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Location = new System.Drawing.Point(23, 248);
+            this.DGV.Name = "DGV";
+            this.DGV.RowHeadersWidth = 51;
+            this.DGV.RowTemplate.Height = 24;
+            this.DGV.Size = new System.Drawing.Size(988, 361);
+            this.DGV.TabIndex = 32;
             // 
             // panel8
             // 
@@ -114,6 +114,7 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(152, 100);
             this.panel9.TabIndex = 15;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // label14
             // 
@@ -162,6 +163,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(152, 100);
             this.panel7.TabIndex = 13;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // label13
             // 
@@ -193,6 +195,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 100);
             this.panel5.TabIndex = 13;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label15
             // 
@@ -233,6 +236,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(152, 100);
             this.panel2.TabIndex = 11;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label12
             // 
@@ -269,7 +273,7 @@
             this.Text = "Dashbord";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -301,6 +305,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV;
     }
 }

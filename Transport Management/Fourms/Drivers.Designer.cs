@@ -32,7 +32,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.Dphone = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.DEarned = new System.Windows.Forms.TextBox();
+            this.DWage = new System.Windows.Forms.TextBox();
             this.DGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -40,20 +40,20 @@
             this.label14 = new System.Windows.Forms.Label();
             this.Dname = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.DRate = new System.Windows.Forms.ComboBox();
+            this.DGen = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.DStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.DLicN = new System.Windows.Forms.TextBox();
+            this.DLic = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.DEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.DJdate = new System.Windows.Forms.DateTimePicker();
+            this.Ddate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,13 +86,13 @@
             this.label16.TabIndex = 33;
             this.label16.Text = "Wage";
             // 
-            // DEarned
+            // DWage
             // 
-            this.DEarned.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DEarned.Location = new System.Drawing.Point(527, 198);
-            this.DEarned.Name = "DEarned";
-            this.DEarned.Size = new System.Drawing.Size(220, 28);
-            this.DEarned.TabIndex = 32;
+            this.DWage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DWage.Location = new System.Drawing.Point(527, 198);
+            this.DWage.Name = "DWage";
+            this.DWage.Size = new System.Drawing.Size(220, 28);
+            this.DWage.TabIndex = 32;
             // 
             // DGV
             // 
@@ -104,6 +104,7 @@
             this.DGV.RowTemplate.Height = 24;
             this.DGV.Size = new System.Drawing.Size(1004, 314);
             this.DGV.TabIndex = 31;
+            this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
             // 
             // button4
             // 
@@ -115,6 +116,7 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -126,6 +128,7 @@
             this.button3.TabIndex = 29;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -163,22 +166,21 @@
             this.label13.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(649, 103);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 20);
+            this.label13.Size = new System.Drawing.Size(70, 20);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Rateing";
+            this.label13.Text = "Gender";
             // 
-            // DRate
+            // DGen
             // 
-            this.DRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DRate.FormattingEnabled = true;
-            this.DRate.Items.AddRange(new object[] {
-            "5- Star",
-            "4-Star",
-            "3-Star"});
-            this.DRate.Location = new System.Drawing.Point(653, 126);
-            this.DRate.Name = "DRate";
-            this.DRate.Size = new System.Drawing.Size(150, 28);
-            this.DRate.TabIndex = 24;
+            this.DGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGen.FormattingEnabled = true;
+            this.DGen.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.DGen.Location = new System.Drawing.Point(653, 126);
+            this.DGen.Name = "DGen";
+            this.DGen.Size = new System.Drawing.Size(150, 28);
+            this.DGen.TabIndex = 24;
             // 
             // label12
             // 
@@ -242,13 +244,13 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "E-Mail";
             // 
-            // DLicN
+            // DLic
             // 
-            this.DLicN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DLicN.Location = new System.Drawing.Point(74, 200);
-            this.DLicN.Name = "DLicN";
-            this.DLicN.Size = new System.Drawing.Size(203, 28);
-            this.DLicN.TabIndex = 12;
+            this.DLic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DLic.Location = new System.Drawing.Point(74, 200);
+            this.DLic.Name = "DLic";
+            this.DLic.Size = new System.Drawing.Size(203, 28);
+            this.DLic.TabIndex = 12;
             // 
             // label6
             // 
@@ -274,11 +276,11 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.DJdate);
+            this.panel1.Controls.Add(this.Ddate);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.Dphone);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.DEarned);
+            this.panel1.Controls.Add(this.DWage);
             this.panel1.Controls.Add(this.DGV);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -286,14 +288,14 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.Dname);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.DRate);
+            this.panel1.Controls.Add(this.DGen);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.DStatus);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.DAddress);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.DLicN);
+            this.panel1.Controls.Add(this.DLic);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.DEmail);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -312,6 +314,7 @@
             this.button5.TabIndex = 42;
             this.button5.Text = "Search";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label10
             // 
@@ -323,13 +326,13 @@
             this.label10.TabIndex = 37;
             this.label10.Text = "Join Date";
             // 
-            // DJdate
+            // Ddate
             // 
-            this.DJdate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DJdate.Location = new System.Drawing.Point(766, 198);
-            this.DJdate.Name = "DJdate";
-            this.DJdate.Size = new System.Drawing.Size(210, 27);
-            this.DJdate.TabIndex = 36;
+            this.Ddate.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ddate.Location = new System.Drawing.Point(766, 198);
+            this.Ddate.Name = "Ddate";
+            this.Ddate.Size = new System.Drawing.Size(210, 27);
+            this.Ddate.TabIndex = 36;
             // 
             // Drivers
             // 
@@ -353,7 +356,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox Dphone;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox DEarned;
+        private System.Windows.Forms.TextBox DWage;
         private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -361,19 +364,19 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox Dname;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox DRate;
+        private System.Windows.Forms.ComboBox DGen;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox DStatus;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox DAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox DLicN;
+        private System.Windows.Forms.TextBox DLic;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox DEmail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker DJdate;
+        private System.Windows.Forms.DateTimePicker Ddate;
         private System.Windows.Forms.Button button5;
     }
 }

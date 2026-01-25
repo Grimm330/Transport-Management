@@ -321,7 +321,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Vehicles";
             this.Text = "Vehicles";
-            this.Load += new System.EventHandler(this.Vehicles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VeGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingTBBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

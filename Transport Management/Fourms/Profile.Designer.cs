@@ -38,13 +38,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Pname = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Pphone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ppass = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pemail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -58,6 +58,7 @@
             this.button2.TabIndex = 43;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -84,6 +85,7 @@
             this.label19.Size = new System.Drawing.Size(69, 19);
             this.label19.TabIndex = 37;
             this.label19.Text = "...............";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label18
             // 
@@ -94,6 +96,7 @@
             this.label18.Size = new System.Drawing.Size(69, 19);
             this.label18.TabIndex = 36;
             this.label18.Text = "...............";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -104,6 +107,7 @@
             this.label17.Size = new System.Drawing.Size(69, 19);
             this.label17.TabIndex = 35;
             this.label17.Text = "...............";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label16
             // 
@@ -114,6 +118,7 @@
             this.label16.Size = new System.Drawing.Size(69, 19);
             this.label16.TabIndex = 34;
             this.label16.Text = "...............";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -155,13 +160,13 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "Full Name -";
             // 
-            // textBox4
+            // Pname
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(167, 175);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(272, 27);
-            this.textBox4.TabIndex = 41;
+            this.Pname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pname.Location = new System.Drawing.Point(167, 175);
+            this.Pname.Name = "Pname";
+            this.Pname.Size = new System.Drawing.Size(272, 27);
+            this.Pname.TabIndex = 41;
             // 
             // label6
             // 
@@ -173,13 +178,13 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "Full Name";
             // 
-            // textBox3
+            // Pphone
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(167, 242);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(272, 27);
-            this.textBox3.TabIndex = 39;
+            this.Pphone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pphone.Location = new System.Drawing.Point(167, 242);
+            this.Pphone.Name = "Pphone";
+            this.Pphone.Size = new System.Drawing.Size(272, 27);
+            this.Pphone.TabIndex = 39;
             // 
             // label7
             // 
@@ -191,13 +196,13 @@
             this.label7.TabIndex = 38;
             this.label7.Text = "Phone Number";
             // 
-            // textBox2
+            // ppass
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(167, 377);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(272, 27);
-            this.textBox2.TabIndex = 37;
+            this.ppass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ppass.Location = new System.Drawing.Point(167, 377);
+            this.ppass.Name = "ppass";
+            this.ppass.Size = new System.Drawing.Size(272, 27);
+            this.ppass.TabIndex = 37;
             // 
             // label8
             // 
@@ -209,13 +214,13 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Password";
             // 
-            // textBox1
+            // pemail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(167, 307);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 27);
-            this.textBox1.TabIndex = 35;
+            this.pemail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pemail.Location = new System.Drawing.Point(167, 307);
+            this.pemail.Name = "pemail";
+            this.pemail.Size = new System.Drawing.Size(272, 27);
+            this.pemail.TabIndex = 35;
             // 
             // label9
             // 
@@ -246,13 +251,13 @@
             this.ClientSize = new System.Drawing.Size(1055, 672);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Pname);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Pphone);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ppass);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pemail);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -277,13 +282,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Pname;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Pphone;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ppass;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pemail;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
     }
