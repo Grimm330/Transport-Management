@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -114,7 +115,7 @@ namespace Transport_Management
         private void button5_Click(object sender, EventArgs e)
         {
             StringBuilder query = new StringBuilder("SELECT * FROM CustomerTB WHERE 1=1");
-            var paramList = new System.Collections.Generic.List<SqlParameter>();
+            var paramList = new List<SqlParameter>();
 
             if (CusName1.Text != "")
             {
